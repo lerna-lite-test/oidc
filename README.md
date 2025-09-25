@@ -19,7 +19,7 @@ The referenced `release.yml` is found within this repo: [.github/workflows/relea
 
 It is only intended to demonstrate the required elements like GitHub Actions `id-token: write` permission being set, it is not prescribing a specific way to invoke `lerna publish`, you are free to invoke that however you wish with whatever arguments you wish. It is the context of being published from within GitHub Actions that matters here, again please see the official documentation on `npm` linked above to learn more.
 
-Real release from this repo, using these settings, with the associated provenance data generated: https://www.npmjs.com/package/@lerna-lite-test/lerna-lite-oidc
+Real release from this repo, using these settings, with the associated provenance data generated: https://www.npmjs.com/package/@lerna-lite-test/oidc
 
 ### Credits
 
