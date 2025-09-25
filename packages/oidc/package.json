@@ -1,6 +1,6 @@
 {
   "name": "@lerna-lite-test/oidc",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "commonjs",
   "description": "Example of trusted publishing with Lerna-Lite",
   "homepage": "https://github.com/lerna-lite-test/oidc#readme",
