@@ -77,9 +77,6 @@ jobs:
     # Only run on the official repository to avoid wasted compute and unnecessary errors on forks (also an initial albeit weak first layer of protection against unauthorized releases)
     # Also ensure validation passed and we're releasing a canary version
     if: github.repository == 'lerna-lite-test/oidc' && needs.validate.outputs.should_release == 'true' && needs.validate.outputs.is_canary == 'true'
-    permissions:
-      contents: read # No need to write to the repository for canary releases
-      id-token: write # Required for trusted publishing
     steps:
       - name: Clone repository
         uses: actions/checkout@v4

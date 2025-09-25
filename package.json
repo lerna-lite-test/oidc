@@ -7,8 +7,5 @@
   "devDependencies": {
     "@lerna-lite/cli": "https://pkg.pr.new/lerna-lite/lerna-lite/@lerna-lite/cli@1150",
     "@lerna-lite/publish": "https://pkg.pr.new/lerna-lite/lerna-lite/@lerna-lite/publish@1150"
-  },
-  "volta": {
-    "node": "22.19.0"
   }
 }
