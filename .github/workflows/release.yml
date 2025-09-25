@@ -22,7 +22,7 @@ jobs:
     name: Validate Release Parameters
     runs-on: ubuntu-latest
     # Only run on the official repository to avoid wasted compute and unnecessary errors on forks (also an initial albeit weak first layer of protection against unauthorized releases)
-    if: github.repository == 'lerna-lite/lerna-lite-oidc'
+    if: github.repository == 'lerna-lite-test/oidc'
     outputs:
       should_release: ${{ steps.validate.outputs.should_release }}
       release_type: ${{ steps.validate.outputs.release_type }}
@@ -75,7 +75,7 @@ jobs:
     needs: [validate]
     # Only run on the official repository to avoid wasted compute and unnecessary errors on forks (also an initial albeit weak first layer of protection against unauthorized releases)
     # Also ensure validation passed and we're releasing a canary version
-    if: github.repository == 'lerna-lite/lerna-lite-oidc' && needs.validate.outputs.should_release == 'true' && needs.validate.outputs.is_canary == 'true'
+    if: github.repository == 'lerna-lite-test/oidc' && needs.validate.outputs.should_release == 'true' && needs.validate.outputs.is_canary == 'true'
     permissions:
       contents: read # No need to write to the repository for canary releases
       id-token: write # Required for trusted publishing
