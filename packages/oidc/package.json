@@ -1,0 +1,26 @@
+{
+  "name": "@lerna-lite-test/oidc",
+  "version": "0.0.1",
+  "type": "commonjs",
+  "description": "Example of trusted publishing with Lerna-Lite",
+  "homepage": "https://github.com/lerna-lite/lerna-lite-oidc#readme",
+  "bugs": {
+    "url": "https://github.com/lerna-lite/lerna-lite-oidc/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lerna-lite/lerna-lite-oidc.git"
+  },
+  "license": "MIT",
+  "main": "src/index.js",
+  "directories": {
+    "src": "src"
+  },
+  "files": [
+    "src"
+  ],
+  "scripts": {},
+  "publishConfig": {
+    "access": "public"
+  }
+}
