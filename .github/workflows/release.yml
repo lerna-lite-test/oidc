@@ -80,21 +80,37 @@ jobs:
       contents: read # No need to write to the repository for canary releases
       id-token: write # Required for trusted publishing
     steps:
-      - name: Checkout
-        uses: actions/checkout@v5
+      - name: Clone repository
+        uses: actions/checkout@v4
         with:
-          # We need the full history for version calculation
           fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Install Node.js per package.json
-        uses: actions/setup-node@v5
-        
+      - name: Set NodeJS
+        uses: actions/setup-node@v4
+        with:
+          registry-url: 'https://registry.npmjs.org/'
+          node-version: 22
+
+      # OIDC requires npm v11.5.1 or later (can probably with Node 24)
       - run: npm install -g npm@latest
       - run: node --version
       - run: npm --version
 
+      - name: Get npm cache directory path
+        id: npm-cache-dir-path
+        run: echo "dir=$(npm config get cache)" >> $GITHUB_OUTPUT
+
+      - uses: actions/cache@v4
+        id: npm-cache
+        with:
+          path: ${{ steps.npm-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-npm-
+
       - name: Install dependencies
-        run: npm ci --ignore-scripts
+        run: npm ci
 
       - name: Publish minor release (using OIDC Trusted Publishing)
         run: lerna publish minor --force-publish -y --push=false --gitTagVersion=false
