@@ -102,4 +102,4 @@ jobs:
         run: npm ci
 
       - name: Publish minor release (using OIDC Trusted Publishing)
-        run: lerna publish minor --force-publish -y --push=false --gitTagVersion=false
+        run: ./node_modules/@lerna-lite/cli/dist/cli.js publish minor --force-publish -y --push=false --gitTagVersion=false
