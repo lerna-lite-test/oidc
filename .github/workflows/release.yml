@@ -15,6 +15,7 @@ concurrency:
 # Minimal permissions by default
 permissions:
   contents: read
+  id-token: write # Required for trusted publishing
 
 jobs:
   # Validation job to ensure secure inputs and determine release type
