@@ -90,7 +90,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org/'
           node-version: 24
 
-      # OIDC requires npm v11.5.1 or later (can probably with Node 24)
+      # OIDC requires npm v11.5.1 or later (can probably work with Node 24)
       - run: npm install -g npm@latest
       - run: node --version
       - run: npm --version
