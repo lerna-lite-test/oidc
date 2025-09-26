@@ -9,7 +9,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lerna-lite-test/oidc.git"
+    "url": "git+https://github.com/lerna-lite-test/oidc.git",
+    "directory": "packages/oidc"
   },
   "license": "MIT",
   "main": "src/index.js",
