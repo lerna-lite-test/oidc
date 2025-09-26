@@ -98,5 +98,5 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Publish minor release (using OIDC Trusted Publishing)
-        run: npx lerna publish minor --force-publish -y --push=false --gitTagVersion=false
+      - name: Publish release (using OIDC Trusted Publishing)
+        run: npx lerna publish from-package --force-publish -y --push=false --gitTagVersion=false
